@@ -1,14 +1,16 @@
 
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+// export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
 import axios from 'axios';
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api',
-  timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-  }
-});
+// const api = axios.create({
+ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://backend-21-2fu1.onrender.com';
+  const api = axios.create({
+    baseURL: `${API_BASE_URL}`, 
+    timeout: 15000, // Increased timeout for Render cold starts
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  });
 
 api.interceptors.request.use(config => {
   const token = localStorage.getItem('token');
