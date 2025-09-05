@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import { FiMail, FiPhone, FiMessageSquare, FiHelpCircle } from 'react-icons/fi';
-
 const Support = () => {
   const [formData, setFormData] = useState({
     name: '',
